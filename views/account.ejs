@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/head') %>
+    <title>Albion Online Hub</title>
+</head>
+
+<body>
+    <!-- Bootstrap Required Script Files -->
+    <%- include('partials/bootstrap') %>
+
+    <!-- Navigation Bar - Ham.Menu - Account-->
+    <header> <%- include('partials/nav') %> </header>
+
+    <!-- Builds -->
+    <div class="container-fluid">
+        <!-- [ ROW 1 ]: 2 Columns [Builds][Pie Chart & Username|Guild] -->
+        <div class="row">
+
+            <!-- Builds -->
+            <section class="builds col-4 border border-dark">
+                <h1>Builds</h1>
+            </section>
+
+            <!-- Pie Chart & Username|Guild-->
+            <section class="pie_chart-container col-8 border border-dark">
+                <div class="pie_chart">
+                    <h1>Pie Chart</h1>
+                </div>
+                <div class="user_details d-flex flex-column">
+                    <p>EatRainbows</p>
+                    <p>Tidal</p>
+                </div>
+
+            </section>
+        </div>
+
+        <!-- [ ROW 1 ]: Ava Stats -->
+        <div class="container-fluid d-flex bar_graph">
+            <h1>Avalonian Raid Stats</h1>
+        </div>
+
+
+
+    </div>
+
+</body>

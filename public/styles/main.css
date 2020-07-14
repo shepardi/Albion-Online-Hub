@@ -1,0 +1,81 @@
+/* ----- Global Variables ----- */
+:root{
+    --aoRed:rgb(83,21,5);
+    --aoWhite: rgb(214,206,203);
+    --aoBackgroundLight: rgb(245,244,239);
+}
+
+/* ----- Navbar ----- */
+.navbar{
+    background-color: var(--aoRed);
+    color: var(--aoWhite);
+}
+
+.ham_menu{
+
+}
+
+.logo{
+    
+}
+
+.user_menu{
+
+}
+
+/* ----- Landing Page ----- */
+body{
+    background: var(--aoBackgroundLight);
+}
+/* News Sidebar */
+
+.overflow{
+    white-space: nowrap;
+    width: 100%;
+    overflow:hidden;
+    text-overflow: ellipsis;
+}
+
+/* Map */
+.map{
+    
+}
+
+.gold_market{
+    margin-left: -10vw;
+    background: rgba(32, 32, 32, 0.055);
+    border-radius: 20px;
+}
+
+.gold_market:hover{
+    background: rgba(32, 32, 32, 0.562);
+}
+
+
+.gold_graph{
+    background:rgb(32, 32, 32);
+    border-radius: 20px;
+}
+
+/* Button Banner */
+.banner-button{
+    margin-top:-3vh;
+    /* margin-right:50%; */
+}
+
+.ao-button{
+    background: url(/images/Button.png); 
+    background-size: cover; 
+    background-repeat: no-repeat;width:10vw; 
+    border:none;
+    height:5vh; 
+    min-width:145px;
+    color:rgb(255,223,187);
+    border:none;
+    margin:0 5px;
+}
+.ao-button:hover{
+    background-image: url(/images/Button_hover.png);
+    color:rgb(255,223,187);
+    border:none;
+}
