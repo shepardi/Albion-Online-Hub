@@ -4,19 +4,124 @@
 <head>
     <%- include('partials/head') %>
     <title>Albion Online Hub</title>
+
 </head>
 
 <body>
-    <!-- Bootstrap Required Script Files -->
+    <!-- Bootstrap Required Script Files && Chart.js CDN -->
     <%- include('partials/bootstrap') %>
+
+    <!-- Gold Market Graph Script -->
+    <script src="/scripts/gold_chart.js" defer></script>
+
 
     <!-- Navigation Bar - Ham.Menu - Account-->
     <header> <%- include('partials/nav') %> </header>
 
 
-    <div class="container-fluid mt-3">
+    <div class="container-fluid mt-3 home">
         <!-- [ ~ Main Content Row ~ ] -->
         <div class="row">
+
+            <!-- Main Section - Albion Map - Market -->
+            <div class="col-md-9 col-lg-10">
+
+                <!-- Albion Map - Gold Market - Premium Price -->
+                <div class="row d-flex">
+                    <!-- Map -->
+                    <div class="col-md-8 map">
+                        <img src="/images/AO_Map_2.png" alt="map" class="img-fluid">
+
+                        <!-- UTC Time -->
+                        <div class="d-flex justify-content-center utc-time">
+                            <b>Game Time:&nbsp</b>
+                            <b id="utc"></b>
+
+                            <!-- Script to get time -->
+                            <script>
+                                function utcTime() {
+                                    let date = new Date();
+                                    let hour = date.getUTCHours();
+                                    let min = date.getUTCMinutes();
+                                    //Make sure minutes are printed as double digits
+                                    if (min < 10) { min = `0${min}`; }
+                                    document.getElementById('utc').innerHTML = `${hour}:${min} UTC`;
+                                }
+                                // Get UTC time once page loads & runs every minute
+                                utcTime();
+                                setInterval(utcTime, 60 * 1000);
+                            </script>
+                        </div>
+
+                    </div>
+
+                    <!-- Market -->
+                    <div class="col-md-4 gold_market d-flex flex-column">
+
+                        <!-- Gold Icon -->
+                        <div class="d-flex" data-toggle='collapse' href=".gold_graph" role="button"
+                            aria-expanded="false" aria-controls="collapseExample">
+                            <img src="/images/gold_icon.png" alt="gold_icon" class="icon gold">
+                            <p>&nbsp Gold Market</p>
+                        </div>
+
+                        <!-- Gold Graph -->
+                        <div class="gold_graph collapse">
+                            <canvas id="myChart" width="100" height="100"></canvas>
+                        </div>
+
+
+                        <!-- Premium Stat -->
+                        <div class="d-flex">
+                            <img src="/images/check_off.png" alt="gold_icon" class="icon check">
+                            <p>&nbsp Premium Cost: 8mil</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <hr class="">
+
+                <!-- Button Banner: Guilds -->
+                <div class="banner-button row d-flex justify-content-center mt-2">
+                    <button class="ao-button">Guilds</button>
+                </div>
+
+                <!-- Raid Maker Banners [Row 1]-->
+                <div class="row m-1">
+                    <!-- Avalonian Raid Form -->
+                    <div class="banner-ava text-center banner col-6">
+                        <a href="/groupCreate" style="color:rgb(214,206,202)"><br>
+                            <h3>Avalonian Raid Form</h3>
+                            <p>Get Started now</p>
+                        </a>
+                    </div>
+
+                    <!-- Dungeon Raid Form -->
+                    <div class="banner-dungeon text-center banner col-6">
+                        <br>
+                        <h3>Dungeon Raid Form</h3>
+                        <p>Get Started now</p>
+                    </div>
+
+                    <!-- Faction Raid Form -->
+                    <div class="banner-faction text-center banner col-6">
+                        <br>
+                        <h3>Faction Raid Form</h3>
+                        <p>Get Started now</p>
+                    </div>
+
+                    <!-- Fastest Mounts? -->
+                    <div class="banner-faction text-center banner col-6">
+                        <br>
+                        <h3>How to get a Command Mammoth</h3>
+                        <p>Get Started now</p>
+                    </div>
+                </div>
+
+
+            </div>
 
             <!-- Side Bar News - Drama Post-->
             <div class="col-md-3 col-lg-2 d-flex flex-column ">
@@ -50,59 +155,13 @@
                     </div>
                 </div>
 
-
-
-
-
-            </div>
-
-            <!-- Main Section - Albion Map - Market -->
-            <div class="col-md-9 col-lg-10 ">
-
-                <!-- Albion Map - Gold Market - Premium Price -->
-                <div class="row d-flex map">
-
-                    <!-- Map -->
-                    <div class="map col-9 s">
-                        <img src="/images/AO_Map.png" alt="map" class="img-fluid">
-                    </div>
-
-                    <!-- Market -->
-                    <div class="gold_market col-3">
-                        <h1>Market</h1>
-                        <img src="/images/gold_graph.png" alt="gold-graph" class="img-fluid gold_graph">
-                        <img src="" alt="">
-                    </div>
-
-                </div>
-                <hr>
-
-                <!-- Button Banner: Guilds -->
-                <div class="banner-button row d-flex justify-content-start">
-                    <button class="ao-button">Guilds</button>
-                    <button class="ao-button">Albion2D</button>
-                    <button class="ao-button">Ava Maker</button>
-                </div>
-
-                <!-- Avalonian Raid Maker Banner-->
-                <div class="row">
-                    <h1>Ava Builder</h1>
-                    <div class="banner">
-                        <img src="" alt="ava-pic" class="img-fluid">
-                    </div>
-                </div>
-
             </div>
 
 
 
         </div>
 
-
     </div>
-
-    </div>
-
 
 </body>
 

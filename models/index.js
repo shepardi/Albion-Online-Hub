@@ -24,4 +24,5 @@ mongoose.connection.on('disconnected', function () {
 //export moduels
 module.exports = {
     Character: require('./Character'),
+    Account: require('./Account'),
 }

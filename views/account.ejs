@@ -3,12 +3,15 @@
 
 <head>
     <%- include('partials/head') %>
-    <title>Albion Online Hub</title>
+    <title>Account</title>
 </head>
 
 <body>
     <!-- Bootstrap Required Script Files -->
     <%- include('partials/bootstrap') %>
+
+    <!-- Account Graph Script -->
+    <script src="/scripts/account_chart.js" defer></script>
 
     <!-- Navigation Bar - Ham.Menu - Account-->
     <header> <%- include('partials/nav') %> </header>
@@ -19,14 +22,20 @@
         <div class="row">
 
             <!-- Builds -->
-            <section class="builds col-4 border border-dark">
-                <h1>Builds</h1>
+            <section class="builds col-6 border border-dark text-center">
+                <h3>Builds</h1>
+                    <!-- Player Builds -->
+                    <%- include('partials/builds') %>
+
             </section>
 
             <!-- Pie Chart & Username|Guild-->
-            <section class="pie_chart-container col-8 border border-dark">
+            <section class="pie_chart-container col-6 border border-dark text-center">
                 <div class="pie_chart">
-                    <h1>Pie Chart</h1>
+                    <h3>Stats</h3>
+                    <div class="">
+                        <canvas id="accountChart" width="100" height="100"></canvas>
+                    </div>
                 </div>
                 <div class="user_details d-flex flex-column">
                     <p>EatRainbows</p>
