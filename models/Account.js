@@ -20,6 +20,7 @@ const accountSchema = new mongoose.Schema({
         type: String,
         require: true
     },
+    // Groups: contains array of form objects that others can click to edit the information
 
 })
 
