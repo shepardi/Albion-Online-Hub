@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/head') %>
+    <title>Account</title>
+</head>
+
+<body>
+    <!-- Bootstrap Required Script Files -->
+    <%- include('partials/bootstrap') %>
+
+    <!-- Account Graph Script -->
+    <script src="/scripts/account_chart.js" defer></script>
+
+    <!-- Navigation Bar - Ham.Menu - Account-->
+    <header> <%- include('partials/nav') %> </header>
+
+    <!-- Builds -->
+    <div class="container-fluid">
+        <!-- [ ROW 1 ]: 2 Columns [Builds][Pie Chart & Username|Guild] -->
+        <div class="row">
+
+            <!-- Builds -->
+            <section class="builds col-6 border border-dark text-center">
+                <h3>Builds</h1>
+                    <!-- Player Builds -->
+                    <%- include('partials/builds') %>
+
+            </section>
+
+            <!-- Pie Chart & Username|Guild-->
+            <section class="pie_chart-container col-6 border border-dark text-center">
+                <div class="pie_chart">
+                    <h3>Stats</h3>
+                    <div class="">
+                        <canvas id="accountChart" width="100" height="100"></canvas>
+                    </div>
+                </div>
+                <div class="user_details d-flex flex-column">
+                    <p>EatRainbows</p>
+                    <p>Tidal</p>
+                </div>
+
+            </section>
+        </div>
+
+        <!-- [ ROW 1 ]: Ava Stats -->
+        <div class="container-fluid d-flex bar_graph">
+            <h1>Avalonian Raid Stats</h1>
+        </div>
+
+
+
+    </div>
+
+</body>

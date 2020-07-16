@@ -1,0 +1,178 @@
+/* ----- Global Variables ----- */
+:root{
+    --aoRed:rgb(83,21,5);
+    --aoWhite: rgb(214,206,203);
+    --aoBackgroundLight: rgb(245,244,239);
+    --aoBrownDark: rgb(194,179,162);
+}
+
+/* ----- Navbar ----- */
+.navbar{
+    background-color: var(--aoRed);
+    color: var(--aoWhite);
+    border-bottom: 10px solid transparent;
+    border-image: url(/images/fantasy-metal-border.jpg) 30 round;
+}
+
+.ham_menu{
+
+}
+
+.logo{
+    
+}
+
+.user_menu{
+
+}
+/* ---- Scroll Bar ----- */
+/* Track */
+.gold_graph::-webkit-scrollbar-track {
+    background:var(--aoBrownDark); 
+  }
+/* ----- Landing Page ----- */
+body{
+    background: var(--aoBackgroundLight);
+}
+
+
+.icon-big{
+    height:40px;
+    width:40px; 
+}
+
+.utc-time{
+    background-color: var(--aoBrownDark);
+    border-radius:20px;
+}
+
+
+/* News Sidebar */
+
+.overflow{
+    white-space: nowrap;
+    width: 100%;
+    overflow:hidden;
+    text-overflow: ellipsis;
+}
+
+.card{
+    border: 5px solid transparent;
+    border-image: url(/images/fantasy-metal-border.jpg) 30 round;
+    overflow:auto;
+}
+
+/* Map */
+.map{
+ 
+}
+
+/* Market */
+p{
+    font-size:small;
+    padding-top:4px
+}
+.icon{
+    height:20px;
+    width:20px;
+    margin-top:5px;
+}
+.check:hover{
+    content:url(/images/check_on.png);
+    
+}
+.gold:hover{
+    content:url(/images/gold_on.png);
+}
+.gold_market{  
+    /* background: rgba(180, 160, 140, 0.781); */
+    border-radius: 20px;
+
+    min-height: 25vh;
+    min-width: 10vw;
+   
+    border: 8px solid transparent;
+    /* border-image: url(/images/fantasy-metal-border.jpg) 30 round; */
+
+    overflow: auto;
+} 
+
+@media only screen and (max-width:780px){
+    .gold_market{
+        max-height:10vh;
+    }
+}
+
+.gold_graph{
+    background: rgba(180, 160, 140, 0.781);
+    border-radius: 20px;
+    
+    overflow: auto;
+}
+
+hr{
+    border: 4px solid transparent;
+    border-image: url(/images/fantasy-metal-border.jpg) 30 round;
+}
+/* Button Banner */
+.banner-button{
+    margin-top:-4.5vh;
+    justify-content: center;
+}
+
+.ao-button{
+    background: url(/images/Button.png); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    width:10vw; 
+    border:none;
+    
+    min-width:130px;
+    max-width:130px;
+    min-height:40px;
+    max-height:40px;
+    color:rgb(255,223,187);
+    margin:0 5px;
+    z-index:2;
+
+    position: absolute;
+}
+.ao-button:hover{
+    background-image: url(/images/Button_hover.png);
+    color:rgb(255,223,187);
+    border:none;
+}
+
+/* Ava Builder */
+.banner-ava{
+    background: url(/images/Avalonian_Wallpaper.jpeg);  
+}
+.banner-dungeon{
+    background: url(/images/Undead_Dungeon.jpeg);
+}
+.banner-faction{
+    background: url(/images/Avalonian_Wallpaper.jpeg);   
+}
+
+.banner{
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:40vw;
+    max-height:10vh;
+
+    border-radius:5px;
+    border: 5px solid transparent;
+    border-image: url(/images/fantasy-metal-border.jpg) 30 round;
+
+    color:var(--aoWhite);
+    text-shadow: 2px 2px black;
+
+    overflow:hidden;
+
+}
+
+.banner:hover{
+    border: goldenrod solid 2px;
+    background-color: var(--aoRed);
+    text-shadow: 2px 2px goldenrod;
+}

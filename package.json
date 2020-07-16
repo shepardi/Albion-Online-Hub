@@ -2,9 +2,10 @@
   "name": "albion-online-hub",
   "version": "1.0.0",
   "description": "Albion Online Tool that helps players see updated albion onine information outside of the, initialized avalonian raid parties, see player stats, and updated on albion online drama news",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -13,9 +14,15 @@
   "author": "Isaac Shepard",
   "license": "MIT",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
+    "chart.js": "^2.9.3",
+    "connect-mongo": "^3.2.0",
+    "dotenv": "^8.2.0",
     "ejs": "^3.1.3",
     "express": "^4.17.1",
+    "express-flash": "0.0.2",
+    "express-session": "^1.17.1",
     "method-override": "^3.0.0",
     "mongoose": "^5.9.23"
   }
