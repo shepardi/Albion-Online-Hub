@@ -1,6 +1,6 @@
 // Bring in Mongoose
 const mongoose = require('mongoose');
-const models = require('.');
+
 
 // Set up Schema
 const roleSchema = new mongoose.Schema({

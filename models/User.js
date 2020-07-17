@@ -5,24 +5,30 @@ const mongoose = require('mongoose');
 const accountSchema = new mongoose.Schema({
     username: {
         type: String,
-        require: true
+        require: true,
+        unique: true
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true
     },
     password: {
         type: String,
-        require: true
+        required: true
     },
     ig_name: {
         type: String,
-        require: true,
+        required: true,
         unique: true
     },
     guild: {
         type: String,
-        require: true
+        required: true
     },
     // Groups: contains array of form objects that others can click to edit the information
 
-})
+});
 
 // Set up model
 const Account = mongoose.model('Account', accountSchema)

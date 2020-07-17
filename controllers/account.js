@@ -1,14 +1,16 @@
-// Express files needed to be available to this file
 const express = require('express');
 const db = require('../models/index');
 
-// Handles our Routes
 const router = express.Router();
 
-//routes
-//Root Route
-router.get('/', function (req, res) {
-    res.render('account');
+// Routes
+router.get('/', (req, res) => {
+    const context = {
+        user: req.session.currentUser,
+    };
+    res.render('account', context);
 });
 
+
+//Export file
 module.exports = router;
