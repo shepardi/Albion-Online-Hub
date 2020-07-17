@@ -24,8 +24,19 @@ I also used Albion Online's game API to query information needed.
 ![Image of userstory1](https://git.generalassemb.ly/ishepard/Albion-Online-Hub/blob/master/userstory1.png)
 ![Image of userstory2](https://git.generalassemb.ly/ishepard/Albion-Online-Hub/blob/master/userstory2.png)
 
+## WireFram
+https://www.figma.com/file/evgFfrjFncdePhUPPmdkDr/Albion-Online-Tool
 
-Link to your wireframes – sketches of major views / interfaces in your application.
-Link to your entity relationship diagrams – plan out your data relationships before coding.
-Descriptions of any unsolved problems or future features.
+## ERD
+![Image of userstory2](https://git.generalassemb.ly/ishepard/Albion-Online-Hub/blob/master/ERD.png)
+
+## Bugs/ and things to Work on.
+Still need to pull in user guild information.
+Need to update Gold Market
+Need to Build a flexable role form
+Need to Build CRUD functionality on News Feed
+Need to Build Models to Store Builds
+Need to Pull Proper event information and post them on the map
+
+
 
