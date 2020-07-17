@@ -21,10 +21,9 @@ mongoose.connection.on('disconnected', function () {
     console.log('mongoose disconnected');
 });
 
-//export moduels
+//export modules
 module.exports = {
     Account: require('./Account'),
     GroupForm: require('./GroupForm'),
     Role: require('./Role'),
-
 }

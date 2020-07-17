@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head') %>
+    <title>Avalonian Party Maker</title>
+</head>
+
+<body>
+    <!-- Bootstrap Required Script Files -->
+    <%- include('../partials/bootstrap') %>
+
+    <!-- Navigation Bar - Ham.Menu - Account-->
+    <header> <%- include('../partials/nav') %> </header>
+
+    <!-- Avalonian Create Group -->
+    <main class="container-fluid">
+
+        <!-- Create Categories [A Card Column] -->
+        <div class="row d-flex flex-column m-1">
+
+            <form action="/groupCreate" method="POST">
+                <!-- Lead -->
+                <p> Lead:<input type="text" name="leader"></p>
+
+                <!-- Map -->
+                <p>Map Tier:
+                    <input type="number" max="8" min="4" name="tier">
+                    <input type="number" max="3" min="1" name="enchant">
+                </p>
+
+                <!-- Time -->
+                <p>Time:<input type="date" name="time"></p>
+
+                <!-- Requirements -->
+                <p>Requirements:<input type="text" name="requirements"></p>
+
+                <!-- Submit -->
+                <button class="btn btn-secondary" type="submit">Create Raid</button>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</body>

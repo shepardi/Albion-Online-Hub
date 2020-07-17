@@ -32,7 +32,9 @@ app.use(express.static(__dirname + '/public'));
 
 /* Controllers */
 app.use('', controllers.root);
+
 app.use('/account', controllers.account);
+
 app.use('/groupCreate', controllers.groupCreate);
 
 // auth routes
