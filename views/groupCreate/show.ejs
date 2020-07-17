@@ -14,51 +14,64 @@
     <header> <%- include('../partials/nav') %> </header>
 
     <!-- Avalonian Create Group -->
-    <main class="container-fluid">
+    <main class="container">
 
         <!-- Create Categories [A Card Column] -->
         <div class="row d-flex flex-column m-1">
-            <h2>Party Lead: [UserName]</h2>
-            <h3>Map Tier: [Image]: T8.1</h3>
-            <h4>Time: @14:20 UTC Wendesday </h4>
-            <h4>Requirements: 1250ip with appropriate gear</h4>
-            <button class="btn btn-primary">Create Role</button>
+            <!-- Leader -->
+            <div class="d-flex">
+                <img src="/images/Avatar.png" alt="helmet" width=100>
+                <h2 class="pt-4"><%= groupForm.leader %> </h2>
+            </div>
+            <!-- Map -->
+            <div class="d-flex">
+                <img src="/images/group_map.png" alt="helmet" width=100>
+                <h3 class="pt-4">Map Tier: T<%= groupForm.tier %>.<%= groupForm.enchant %> </h3>
+            </div>
+            <!-- Time -->
+
+            <h4>Time: <%= groupForm.time%> </h4>
+            <!-- Requirements -->
+            <h4>Requirements: <%= groupForm.requirements %> </h4>
         </div>
+        <!-- Edit -->
+        <section>
+            <a href="/groupCreate/<%= groupForm._id %>/edit ">Edit</a>
+        </section>
 
         <hr>
 
+        <!-- Slots -->
         <div class="row">
-            <!-- Create a Slot [Card] - Role: Tank ect... -->
 
-            <!-- Example Cols (will be a for loop) -->
-            <div class="col-3 d-flex flex-column">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="cart0title">Tanks</h3>
-                        <ul>
-                            <li>Main Tank: <input type="text" placeholder="Main Tank"></li>
-                            <li>Off Tank:<input type="text" name="" placeholder="Off Tank"></li>
-                        </ul>
-                    </div>
+            <% for(let i = 0; i < 20; i++){ %>
+
+            <div class="card my-1 col-3 d-flex">
+                <div class="pt-2">
+                    <!-- Name -->
+
+                    <p> <b><%=i+1%></b>
+                        <input type="text" name="slots" placeholder="IG Name" id="slot-input" onsubmit="disableInput()"
+                            value="<%= groupForm.slots[i] %> ">
+                    </p>
+                    <!-- script to check if someone has taken the spot -->
+                    <script>
+                        function disableInput() {
+                            let input = document.getElementById('slot-input').textContent();
+                            if (input == true) {
+                                input.disabled = true;
+                            }
+                        }
+
+                        // Get UTC time once page loads & runs every minute
+                        utcTime();
+                        setInterval(utcTime, 60 * 1000);
+                    </script>
+
                 </div>
-                <button class="btn btn-secondary">Add Slot</button>
             </div>
 
-            <div class="col-3 d-flex flex-column">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="cart0title">DPS</h3>
-                        <ul>
-                            <li>Divine</li>
-                            <li>Fallen</li>
-                            <li>Fallen</li>
-                            <li>Rampant</li>
-                        </ul>
-                    </div>
-                </div>
-                <button class="btn btn-secondary">Add Slot</button>
-            </div>
-
+            <% } %>
         </div>
 
 

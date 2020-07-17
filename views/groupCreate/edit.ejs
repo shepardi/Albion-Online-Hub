@@ -2,13 +2,91 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <%- include('../partials/head') %>
+    <title>Avalonian Party Create</title>
 </head>
 
 <body>
-    <h1>Edit</h1>
+    <!-- Bootstrap Required Script Files -->
+    <%- include('../partials/bootstrap') %>
+
+    <!-- Navigation Bar - Ham.Menu - Account-->
+    <header> <%- include('../partials/nav') %> </header>
+
+    <!-- Avalonian Create Group -->
+    <main class="container">
+
+        <!-- Create Categories [A Card Column] -->
+        <!-- Details -->
+        <section>
+            <hr>
+            <form action="/groupCreate/<%=groupForm._id%>?_method=PUT" method="POST">
+                <div class="d-flex flex-column m-1">
+                    <!-- Lead & Map -->
+                    <div class="d-flex mb-2">
+                        <img src="/images/Avatar.png" alt="helmet" width=100>
+                        <h4 class="mx-1 pt-4"><input type="text" name="leader" placeholder="Leader IG_Name">
+                        </h4>
+
+                        <img src="/images/group_map.png" alt="helmet" width=100>
+                        <h4 class="mx-1 pt-4">
+                            T<input type="number" max="8" min="4" name="tier">
+                            .<input type="number" max="3" min="1" name="enchant">
+                        </h4>
+
+
+                        <!-- Time -->
+                        <h4 class="pt-4 ml-4">Time:<input type="date" name="time" required></h4>
+
+                    </div>
+
+
+                    <!-- Requirements -->
+                    <h4 class="ml-4">Requirements:<input type="text" name="requirements"></h4>
+
+                    <!-- Submit -->
+                    <button class="btn btn-secondary" type="submit">Update Raid</button>
+                </div>
+            </form>
+        </section>
+
+        <hr>
+
+        <!-- Slots -->
+        <div class="row">
+
+            <% for(let i = 0; i < 20; i++){ %>
+
+            <div class="card my-1 col-3 d-flex">
+                <div class="pt-2">
+                    <!-- Name -->
+
+                    <p> <b><%=i+1%></b>
+                        <input type="text" name="slots" placeholder="IG Name" id="slot-input" onsubmit="disableInput()"
+                            value="<%= groupForm.slots[i] %> ">
+                    </p>
+                    <!-- script to check if someone has taken the spot -->
+                    <script>
+                        function disableInput() {
+                            let input = document.getElementById('slot-input').textContent();
+                            if (input == true) {
+                                input.disabled = true;
+                            }
+                        }
+
+                        // Get UTC time once page loads & runs every minute
+                        utcTime();
+                        setInterval(utcTime, 60 * 1000);
+                    </script>
+
+                </div>
+            </div>
+
+            <% } %>
+        </div>
+
+
+    </main>
 </body>
 
 </html>

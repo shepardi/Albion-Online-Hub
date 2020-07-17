@@ -14,26 +14,98 @@
     <header> <%- include('../partials/nav') %> </header>
 
     <!-- Avalonian Create Group -->
-    <main class="container-fluid">
+    <main class="container">
 
+        <!-- Lists Of Groups Already Made -->
+        <div class="row mt-3 justify-content-center">
+            <% for(let i = 0; i < groupForms.length; i++){ %>
+            <div class="p-2 ml-1 mb-1  border border-dark rounded overflow-auto groups d-flex">
+                <a href="/groupCreate/<%=groupForms[i]._id %>" class="overflow-auto badge badge-info">
+                    <h6 class="pt-2"><%=groupForms[i].leader%>,
+                        <%=groupForms[i].time.getMonth()%>
+                        /<%=groupForms[i].time.getDay()%>
+                        @<%=groupForms[i].time.getUTCHours()%> UTC
+                    </h6>
+                </a>
+                <form action=" /groupCreate/<%=groupForms[i]._id %>?_method=DELETE" method="POST">
+                    <input type="submit" value="x" class="btn btn-dark">
+                </form>
+            </div>
+            <% } %>
+
+        </div>
+        <hr>
         <!-- Create Categories [A Card Column] -->
         <div class="row d-flex flex-column m-1">
 
             <form action="/groupCreate" method="POST">
-                <!-- Lead -->
-                <p> Lead:<input type="text" name="leader"></p>
+                <div class="d-flex flex-column m-1">
+                    <!-- Lead & Map -->
+                    <div class="d-flex justify-content-space">
+                        <img src="images/Avatar.png" alt="helmet" width=100>
+                        <h4 class="mx-1 pt-4"><input type="text" name="leader" placeholder="Leader IG_Name">
+                        </h4>
 
-                <!-- Map -->
-                <p>Map Tier:
-                    <input type="number" max="8" min="4" name="tier">
-                    <input type="number" max="3" min="1" name="enchant">
-                </p>
+                        <img src="images/group_map.png" alt="helmet" width=100>
+                        <h4 class="mx-1 pt-4">
+                            T<input type="number" max="8" min="4" name="tier">
+                            .<input type="number" max="3" min="1" name="enchant">
+                            </h3>
 
-                <!-- Time -->
-                <p>Time:<input type="date" name="time"></p>
+                    </div>
 
-                <!-- Requirements -->
-                <p>Requirements:<input type="text" name="requirements"></p>
+                    <!-- Time -->
+                    <h4 class="ml-4">Time:<input type="date" name="time" required></h4>
+
+                    <!-- Requirements -->
+                    <h4 class="ml-4">Requirements:<input type="text" name="requirements"></h4>
+                </div>
+
+                <hr>
+
+                <!-- Slots -->
+                <div class="row">
+
+                    <% for(let i = 0; i < 20; i++){ %>
+
+                    <div class="card my-1 col-3 d-flex">
+                        <div class="pt-2">
+                            <!-- Name -->
+                            <!-- <input type="text" name="igName"> -->
+                            <!-- Weapon/Class -->
+                            <p> <b><%=i+1%></b>
+                                <input type="text" name="slots" placeholder="IG Name" id="slot-input"
+                                    onsubmit="disableInput()">
+                            </p>
+
+                            <!-- script to check if someone has taken the spot -->
+                            <script>
+                                function disableInput() {
+                                    let input = document.getElementById('slot-input').textContent();
+                                    if (input == true) {
+                                        input.disabled = true;
+                                    }
+                                }
+
+                                // Get UTC time once page loads & runs every minute
+                                utcTime();
+                                setInterval(utcTime, 60 * 1000);
+                            </script>
+                            <!-- Role -->
+                            <!-- <select name="role">
+                                    <option value="Tank">Tank</option>
+                                    <option value="Melee">Melee</option>
+                                    <option value="Ranged">Ranged DPS</option>
+                                    <option value="Magic">Magic DPS</option>
+                                    <option value="Support">Support</option>
+                                </select> -->
+
+                        </div>
+                    </div>
+
+                    <% } %>
+                </div>
+
 
                 <!-- Submit -->
                 <button class="btn btn-secondary" type="submit">Create Raid</button>
