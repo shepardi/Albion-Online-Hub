@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <%- include('../partials/head') %>
+    <title>Register</title>
+</head>
+
+<body>
+    <!-- BootStrap Script Files -->
+    <%- include('../partials/bootstrap') %>
+
+    <!-- Header Section -->
+    <header><%- include('../partials/nav') %></header>
+
+    <!-- Register Form -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-8 mx-auto my-4">
+                <!-- Title -->
+                <h1>Register</h1>
+                <!-- Form -->
+                <form action="/auth/register" method="POST">
+                    <input type="text" name="username" placeholder="username" required />
+                    <input type="email" name="email" placeholder="Email" required />
+                    <input type="text" name="ig_name" placeholder="ig_name" required />
+                    <input type="text" name="guild" placeholder="guild" required />
+                    <input type="password" name="password" placeholder="password" required />
+                    <input type="submit" value="Register" />
+                </form>
+            </div>
+        </div>
+
+        <!-- Check with albion api if the user name is real -->
+
+        <!-- Image -->
+        <div class="row">
+            <div class="col-sm-6 mx-auto my-4">
+                <img src="https://4.bp.blogspot.com/-jRy0aTA_hwI/WjYytguX0aI/AAAAAAAPfho/bcsbmCnwdcQJvjH1N-4N6l4px6AAVfwtQCLcBGAs/s1600/AW684758_20.gif?time=Mon%20Jun%2008%202020%2004:03:21%20GMT-0700%20(Pacific%20Daylight%20Time)"
+                    alt="">
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head') %>
+    <title>Avalonian Party Create</title>
+</head>
+
+<body>
+    <!-- Bootstrap Required Script Files -->
+    <%- include('../partials/bootstrap') %>
+
+    <!-- Navigation Bar - Ham.Menu - Account-->
+    <header> <%- include('../partials/nav') %> </header>
+
+    <!-- Avalonian Create Group -->
+    <main class="container">
+
+        <!-- Create Categories [A Card Column] -->
+        <div class="row d-flex flex-column m-1">
+            <!-- Leader -->
+            <div class="d-flex">
+                <img src="/images/Avatar.png" alt="helmet" width=100>
+                <h2 class="pt-4"><%= groupForm.leader %> </h2>
+            </div>
+            <!-- Map -->
+            <div class="d-flex">
+                <img src="/images/group_map.png" alt="helmet" width=100>
+                <h3 class="pt-4">Map Tier: T<%= groupForm.tier %>.<%= groupForm.enchant %> </h3>
+            </div>
+            <!-- Time -->
+
+            <h4>Time: <%= groupForm.time%> </h4>
+            <!-- Requirements -->
+            <h4>Requirements: <%= groupForm.requirements %> </h4>
+        </div>
+        <!-- Edit -->
+        <section>
+            <a href="/groupCreate/<%= groupForm._id %>/edit ">Edit</a>
+        </section>
+
+        <hr>
+
+        <!-- Slots -->
+        <div class="row">
+
+            <% for(let i = 0; i < 20; i++){ %>
+
+            <div class="card my-1 col-3 d-flex">
+                <div class="pt-2">
+                    <!-- Name -->
+
+                    <p> <b><%=i+1%></b>
+                        <input type="text" name="slots" placeholder="IG Name" id="slot-input" onsubmit="disableInput()"
+                            value="<%= groupForm.slots[i] %> ">
+                    </p>
+                    <!-- script to check if someone has taken the spot -->
+                    <script>
+                        function disableInput() {
+                            let input = document.getElementById('slot-input').textContent();
+                            if (input == true) {
+                                input.disabled = true;
+                            }
+                        }
+
+                        // Get UTC time once page loads & runs every minute
+                        utcTime();
+                        setInterval(utcTime, 60 * 1000);
+                    </script>
+
+                </div>
+            </div>
+
+            <% } %>
+        </div>
+
+
+    </main>
+</body>
+
+</html>

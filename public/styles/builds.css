@@ -1,0 +1,21 @@
+:root{
+    --slotSize: 100px;
+}
+.head{
+    background-image: url(/images/AO_Character_Slots/slot_head.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:var(--slotSize);
+    width:var(--slotSize);
+}
+
+
+.dropdown-toggle{
+    margin-left:-14%;
+    opacity:.5;
+    padding:0;
+}
+
+.dropdown-toggle:hover{
+    opacity:1;
+}
