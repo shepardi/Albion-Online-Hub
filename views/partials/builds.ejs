@@ -10,14 +10,16 @@
         let enchant = lvl
 
         let searchString = `T${tier}_${item}@${enchant}`;
+
         console.log(searchString);
+        console.log(type);
 
         document.getElementById(`${type}`).src = `https://gameinfo.albiononline.com/api/gameinfo/items/${searchString}/`
 
     }
 </script>
 <!-- ROW 1 -->
-<div class="row d-flex mx-2 ">
+<div class="row d-flex mx-2 justify-content-center justify-content-center">
     <!-- Bag-->
     <div class="dropdown head">
 
@@ -41,7 +43,7 @@
                 </select>
                 <!-- Item Tier -->
                 <label for="tier">Tier:</label>
-                <input type="number" min="2" max="8" id="bag-tier" placeholder="4" onclick="searchItem( 
+                <input type="number" min="4" max="8" id="bag-tier" placeholder="4" onclick="searchItem( 
                         document.getElementById('bag-item').value, 
                         document.getElementById('bag-tier').value,
                         document.getElementById('bag-enchant').value,
@@ -49,8 +51,12 @@
                         )">
                 <label for=" enchant">Enchantment:</label>
                 <!-- Item Enchanment Lvl -->
-                <input type="number" min='0' max='3' id="bag-enchant" placeholder="0"
-                    onclick="searchItem( document.getElementById('bag-item').value, document.getElementById('bag-tier').value,document.getElementById('bag-enchant').value)">
+                <input type="number" min='0' max='3' id="bag-enchant" placeholder="0" onclick="searchItem( 
+                        document.getElementById('bag-item').value, 
+                        document.getElementById('bag-tier').value,
+                        document.getElementById('bag-enchant').value,
+                        'bag'
+                        )">
                 <!-- Submit Button -->
 
             </div>
@@ -65,7 +71,7 @@
 
             <!-- Item Icon -->
             <img src="https://gameinfo.albiononline.com/api/gameinfo/items/T7_HEAD_PLATE_SET2@2/" alt="item"
-                class="img-fluid item">
+                class="img-fluid item" id="head">
 
             <!-- Drop Down Button -->
             <button class="btn btn-secondary dropdown-toggle float-right" type="button" id="head_dropdown"
@@ -76,15 +82,27 @@
             <div class=" dropdown-menu" aria-labelledby="dropdownMenuButton">
 
                 <!-- Item Name -->
-                <select name="HEAD_PLATE_SET" id="head-item">
-                    <option value="HEAD_PLATE_SET">Plate</option>
-                    <option value="HEAD_LEATHER_SET">Leather</option>
-                    <option value="HEAD_CLOTH_SET">Cloth</option>
+                <select name="HEAD_PLATE_SET" id="head-item" size=3 onclick="searchItem( 
+                    document.getElementById('head-item').value, 
+                    document.getElementById('head-tier').value,
+                    document.getElementById('head-enchant').value,
+                    'head'
+                    )">>
+                    <!-- Plate -->
+                    <option value="HEAD_PLATE_SET1">Soldier</option>
+                    <option value="HEAD_PLATE_SET2">Knight</option>
+                    <option value="HEAD_PLATE_SET3">Guardian</option>
+                    <option value="HEAD_PLATE_DEMON">Demon</option>
+                    <option value="HEAD_PLATE_UNDEAD">Undead</option>
+                    <option value="HEAD_PLATE_KEEPER">Keeper</option>
+                    <!-- Leather -->
+
+                    <!-- Cloth -->
                 </select>
 
                 <!-- Item Tier -->
                 <label for="tier">Tier:</label>
-                <input type="number" min="1" max="8" id="head-tier" placeholder="4" onclick="searchItem( 
+                <input type="number" min="4" max="8" id="head-tier" value=4 onclick="searchItem( 
                         document.getElementById('head-item').value, 
                         document.getElementById('head-tier').value,
                         document.getElementById('head-enchant').value,
@@ -92,8 +110,12 @@
                         )">
                 <label for=" enchant">Enchantment:</label>
                 <!-- Item Enchanment Lvl -->
-                <input type="number" min='1' max='3' id="head-enchant" placeholder="0"
-                    onclick="searchItem( document.getElementById('head-item').value, document.getElementById('head-tier').value,document.getElementById('head-enchant').value)">
+                <input type="number" min='0' max='3' id="head-enchant" value=0 onclick="searchItem( 
+                    document.getElementById('head-item').value, 
+                    document.getElementById('head-tier').value,
+                    document.getElementById('head-enchant').value,
+                    'head'
+                    )">
 
             </div>
         </div>
@@ -106,7 +128,8 @@
         <div class="d-flex border border-dark float-right">
 
             <!-- Item Icon -->
-            <img src="https://gameinfo.albiononline.com/api/gameinfo/items/T7_CAPE/" alt="item" class="img-fluid item">
+            <img src="https://gameinfo.albiononline.com/api/gameinfo/items/T7_CAPE/" alt="item" class="img-fluid item"
+                id='cape'>
 
             <!-- Drop Down Button -->
             <button class="btn btn-secondary dropdown-toggle" type="button" id="head_dropdown" data-toggle="dropdown"
@@ -115,20 +138,28 @@
 
             <!-- Gear Option List -->
             <div class=" dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <form onsubmit="searchItem()"></form>
+
                 <!-- Item Name -->
-                <select name="item" id="item">
-                    <option value="ITEM"></option>
+                <select name="item" id="cape-item">
+                    <option value="CAPE">Cape</option>
                 </select>
                 <!-- Item Tier -->
                 <label for="tier">Tier:</label>
-                <input type="number" min="1" max="8" id="tier" placeholder="4" onclick='searchItem()'>
+                <input type="number" min="4" max="8" id="cape-tier" placeholder="4" onclick="searchItem( 
+                    document.getElementById('cape-item').value, 
+                    document.getElementById('cape-tier').value,
+                    document.getElementById('cape-enchant').value,
+                    'cape'
+                    )">
                 <label for="enchant">Enchantment:</label>
                 <!-- Item Enchanment Lvl -->
-                <input type="number" min='1' max='3' id="enchant" placeholder="0" onlick='searchItem()'>
-                <!-- Submit Button -->
-                <button type="submit">Enter</button>
-                </form>
+                <input type="number" min='0' max='3' id="cape-enchant" placeholder="0" onclick="searchItem( 
+                    document.getElementById('cape-item').value, 
+                    document.getElementById('cape-tier').value,
+                    document.getElementById('cape-enchant').value,
+                    'cape'
+                    )">
+
 
             </div>
         </div>
@@ -136,7 +167,7 @@
 </div>
 
 <!-- ROW 2 -->
-<div class="row d-flex mx-2 ">
+<div class="row d-flex mx-2 justify-content-center ">
     <!-- Main Hand-->
     <div class="dropdown head">
 
@@ -144,7 +175,7 @@
 
             <!-- Item Icon -->
             <img src="https://gameinfo.albiononline.com/api/gameinfo/items/T7_MAIN_SWORD@3/" alt="item"
-                class="img-fluid item">
+                class="img-fluid item" id="main">
 
             <!-- Drop Down Button -->
             <button class="btn btn-secondary dropdown-toggle" type="button" id="head_dropdown" data-toggle="dropdown"
@@ -153,20 +184,36 @@
 
             <!-- Gear Option List -->
             <div class=" dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <form onsubmit="searchItem()"></form>
+
                 <!-- Item Name -->
-                <select name="item" id="item">
-                    <option value="ITEM"></option>
+                <select name="item" id="main-item" size="3" onclick="searchItem( 
+                    document.getElementById('main-item').value, 
+                    document.getElementById('main-tier').value,
+                    document.getElementById('main-enchant').value,
+                    'main'
+                    )">>
+                    <option value="MAIN_SWORD">Broad Sword</option>
+                    <option value="2H_DUALSWORD">Dual Swords</option>
+                    <option value="2H_CLEAVER_HELL">Carving Sword</option>
+                    <option value="2H_CLAYMORE">CLAYMORE</option>
+                    <option value="2H_DUALSCIMITAR_UNDEAD">Gallinie Pair</option>
                 </select>
                 <!-- Item Tier -->
                 <label for="tier">Tier:</label>
-                <input type="number" min="1" max="8" id="tier" placeholder="4" onclick='searchItem()'>
+                <input type="number" min="4" max="8" id="main-tier" value="4" onclick="searchItem( 
+                    document.getElementById('main-item').value, 
+                    document.getElementById('main-tier').value,
+                    document.getElementById('main-enchant').value,
+                    'main'
+                    )">
                 <label for="enchant">Enchantment:</label>
                 <!-- Item Enchanment Lvl -->
-                <input type="number" min='1' max='3' id="enchant" placeholder="0" onlick='searchItem()'>
-                <!-- Submit Button -->
-                <button type="submit">Enter</button>
-                </form>
+                <input type="number" min='0' max='3' id="main-enchant" value="0" onclick="searchItem( 
+                    document.getElementById('main-item').value, 
+                    document.getElementById('main-tier').value,
+                    document.getElementById('main-enchant').value,
+                    'main'
+                    )">
 
             </div>
         </div>
@@ -180,7 +227,7 @@
 
             <!-- Item Icon -->
             <img src="https://gameinfo.albiononline.com/api/gameinfo/items/T7_ARMOR_PLATE_SET2@2/" alt="item"
-                class="img-fluid item">
+                class="img-fluid item" id="chest">
 
             <!-- Drop Down Button -->
             <button class="btn btn-secondary dropdown-toggle float-right" type="button" id="head_dropdown"
@@ -189,20 +236,39 @@
 
             <!-- Gear Option List -->
             <div class=" dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <form onsubmit="searchItem()"></form>
+
                 <!-- Item Name -->
-                <select name="item" id="item">
-                    <option value="ITEM"></option>
+                <select name="item" id="chest-item" size="3" onclick="searchItem( 
+                    document.getElementById('chest-item').value, 
+                    document.getElementById('chest-tier').value,
+                    document.getElementById('chest-enchant').value,
+                    'chest'
+                    )">
+                    <option value="ARMOR_PLATE_SET1">Soldier</option>
+                    <option value="ARMOR_PLATE_SET2">Knight</option>
+                    <option value="ARMOR_PLATE_SET3">Guardian</option>
+                    <option value="ARMOR_PLATE_HELL">Demon</option>
+                    <option value="ARMOR_PLATE_UNDEAD">Graveguard</option>
+                    <option value="ARMOR_PLATE_KEEPER">Judicator</option>
+
                 </select>
                 <!-- Item Tier -->
                 <label for="tier">Tier:</label>
-                <input type="number" min="1" max="8" id="tier" placeholder="4" onclick='searchItem()'>
+                <input type="number" min="4" max="8" id="chest-tier" value="4" onclick="searchItem( 
+                    document.getElementById('chest-item').value, 
+                    document.getElementById('chest-tier').value,
+                    document.getElementById('chest-enchant').value,
+                    'chest'
+                    )">'>
                 <label for="enchant">Enchantment:</label>
                 <!-- Item Enchanment Lvl -->
-                <input type="number" min='1' max='3' id="enchant" placeholder="0" onclick='searchItem()'>
-                <!-- Submit Button -->
-                <button type="submit">Enter</button>
-                </form>
+                <input type="number" min='0' max='3' id="chest-enchant" value="0" onclick="searchItem( 
+                    document.getElementById('chest-item').value, 
+                    document.getElementById('chest-tier').value,
+                    document.getElementById('chest-enchant').value,
+                    'chest'
+                    )">>
+
             </div>
         </div>
 
@@ -215,7 +281,7 @@
 
             <!-- Item Icon -->
             <img src="https://gameinfo.albiononline.com/api/gameinfo/items/T7_OFF_TORCH@1/" alt="item"
-                class="img-fluid item">
+                class="img-fluid item" id="off">
 
             <!-- Drop Down Button -->
             <button class="btn btn-secondary dropdown-toggle" type="button" id="head_dropdown" data-toggle="dropdown"
@@ -224,20 +290,39 @@
 
             <!-- Gear Option List -->
             <div class=" dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <form onsubmit="searchItem()"></form>
+
                 <!-- Item Name -->
-                <select name="item" id="item">
-                    <option value="ITEM"></option>
+                <select name="item" id="off-item" size="3" onclick="searchItem( 
+                    document.getElementById('off-item').value, 
+                    document.getElementById('off-tier').value,
+                    document.getElementById('off-enchant').value,
+                    'off'
+                    )">>
+                    <option value="OFF_TORCH">Torch</option>
+                    <option value="OFF_HORN_KEEPER">Mist Caller</option>
+                    <option value="OFF_LAMP_UNDEAD">Crypt Candle</option>
+                    <option value="OFF_BOOK">Tome</option>
+                    <option value="OFF_TOTEM_KEEPER">Taproot</option>
+                    <option value="OFF_ORB_MORGANA">Mana Orb</option>
+
                 </select>
                 <!-- Item Tier -->
                 <label for="tier">Tier:</label>
-                <input type="number" min="1" max="8" id="tier" placeholder="4" onclick='searchItem()'>
+                <input type="number" min="1" max="8" id="off-tier" value="4" onclick="searchItem( 
+                    document.getElementById('off-item').value, 
+                    document.getElementById('off-tier').value,
+                    document.getElementById('off-enchant').value,
+                    'off'
+                    )">
                 <label for="enchant">Enchantment:</label>
                 <!-- Item Enchanment Lvl -->
-                <input type="number" min='1' max='3' id="enchant" placeholder="0" onclick='searchItem()'>
-                <!-- Submit Button -->
-                <button type="submit">Enter</button>
-                </form>
+                <input type="number" min='1' max='3' id="off-enchant" value="0" onclick="searchItem( 
+                    document.getElementById('off-item').value, 
+                    document.getElementById('off-tier').value,
+                    document.getElementById('off-enchant').value,
+                    'off'
+                    )">
+
 
             </div>
         </div>
@@ -245,7 +330,7 @@
 </div>
 
 <!-- ROW 3 -->
-<div class="row d-flex mx-2 ">
+<div class="row d-flex mx-2 justify-content-center ">
     <!-- Food -->
     <div class="dropdown head">
 
@@ -253,7 +338,7 @@
 
             <!-- Item Icon -->
             <img src="https://gameinfo.albiononline.com/api/gameinfo/items/T7_MEAL_OMELETTE@2/" alt="item"
-                class="img-fluid item">
+                class="img-fluid item" id="food">
 
             <!-- Drop Down Button -->
             <button class="btn btn-secondary dropdown-toggle" type="button" id="head_dropdown" data-toggle="dropdown"
@@ -262,20 +347,31 @@
 
             <!-- Gear Option List -->
             <div class=" dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <form onsubmit="searchItem()"></form>
+
                 <!-- Item Name -->
-                <select name="item" id="item">
-                    <option value="ITEM"></option>
+                <select name="item" id="food-item" size="3">
+                    <option value="MEAL_OMELETTE">Omelette</option>
+                    <option value="MEAL_SOUP">Soup</option>
+                    <option value="MEAL_SANDWICH">Sandhich</option>
+                    <option value="MEAL_STEW">Stew</option>
                 </select>
                 <!-- Item Tier -->
                 <label for="tier">Tier:</label>
-                <input type="number" min="1" max="8" id="tier" placeholder="4" onclick='searchItem()'>
+                <input type="number" min="4" max="8" id="food-tier" value="4" onclick="searchItem( 
+                    document.getElementById('food-item').value, 
+                    document.getElementById('food-tier').value,
+                    document.getElementById('food-enchant').value,
+                    'food'
+                    )">>
                 <label for="enchant">Enchantment:</label>
                 <!-- Item Enchanment Lvl -->
-                <input type="number" min='1' max='3' id="enchant" placeholder="0" onclick='searchItem()'>
-                <!-- Submit Button -->
-                <button type="submit">Enter</button>
-                </form>
+                <input type="number" min='0' max='3' id="food-enchant" value="0" onclick="searchItem( 
+                    document.getElementById('food-item').value, 
+                    document.getElementById('food-tier').value,
+                    document.getElementById('food-enchant').value,
+                    'food'
+                    )">>
+
 
             </div>
         </div>
@@ -289,7 +385,7 @@
 
             <!-- Item Icon -->
             <img src="https://gameinfo.albiononline.com/api/gameinfo/items/T7_SHOES_PLATE_SET2@2/" alt="item"
-                class="img-fluid item">
+                class="img-fluid item" id="feet">
 
             <!-- Drop Down Button -->
             <button class="btn btn-secondary dropdown-toggle float-right" type="button" id="head_dropdown"
@@ -300,18 +396,38 @@
             <div class=" dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <form onsubmit="searchItem()"></form>
                 <!-- Item Name -->
-                <select name="item" id="item">
-                    <option value="ITEM"></option>
+                <select name="item" id="feet-item" size="3" onclick="searchItem( 
+                    document.getElementById('feet-item').value, 
+                    document.getElementById('feet-tier').value,
+                    document.getElementById('feet-enchant').value,
+                    'feet'
+                    )">>
+                    >
+                    <option value="SHOES_PLATE_SET1">Soldier</option>
+                    <option value="SHOES_PLATE_SET2">Knight</option>
+                    <option value="SHOES_PLATE_SET3">Guardian</option>
+                    <option value="SHOES_PLATE_HELL">Demon</option>
+                    <option value="SHOES_PLATE_UNDEAD">Graveguard</option>
+                    <option value="SHOES_PLATE_KEEPER">Judicator</option>
                 </select>
                 <!-- Item Tier -->
                 <label for="tier">Tier:</label>
-                <input type="number" min="1" max="8" id="tier" placeholder="4" onclick='searchItem()'>
+                <input type="number" min="4" max="8" id="feet-tier" value="4" onclick="searchItem( 
+                    document.getElementById('feet-item').value, 
+                    document.getElementById('feet-tier').value,
+                    document.getElementById('feet-enchant').value,
+                    'feet'
+                    )">>
+
                 <label for="enchant">Enchantment:</label>
                 <!-- Item Enchanment Lvl -->
-                <input type="number" min='1' max='3' id="enchant" placeholder="0" onclick='searchItem()'>
-                <!-- Submit Button -->
-                <button type="submit">Enter</button>
-                </form>
+                <input type="number" min='0' max='3' id="feet-enchant" value="0" onclick="searchItem( 
+                    document.getElementById('feet-item').value, 
+                    document.getElementById('feet-tier').value,
+                    document.getElementById('feet-enchant').value,
+                    'feet'
+                    )">>
+
             </div>
         </div>
 
