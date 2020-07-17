@@ -8,7 +8,7 @@ const MongoStore = require('connect-mongo')(session);
 /* -- Internal Modules -- */
 const controllers = require('./controllers');
 // const adminRequired = require('./middleware/adminRequire');
-// const db = require('./models/index');
+const db = require('./models/index');
 
 /* -- Instance Module -- */
 const app = express(); // returns an object to start a server
@@ -29,6 +29,12 @@ app.use(methodOverride('_method'));
 app.use(express.static(__dirname + '/public'));
 
 /* Session Config */
+app.use(session({
+    secret: "Albion Online",
+    resave: false,
+    saveUninitialized: false
+
+}));
 
 /* Controllers */
 app.use('', controllers.root);

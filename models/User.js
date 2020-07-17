@@ -22,7 +22,7 @@ const accountSchema = new mongoose.Schema({
     },
     // Groups: contains array of form objects that others can click to edit the information
 
-})
+});
 
 // Set up model
 const Account = mongoose.model('Account', accountSchema)

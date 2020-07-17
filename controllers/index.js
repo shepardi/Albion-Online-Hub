@@ -1,5 +1,5 @@
 module.exports = {
     root: require('./root'),
-    account: require('./account'),
+    auth: require('./auth'),
     groupCreate: require('./groupCreate'),
 }

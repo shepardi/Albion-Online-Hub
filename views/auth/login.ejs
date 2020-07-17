@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <%- include('../partials/head') %>
+    <title>Login</title>
+</head>
+
+<body>
+    <!-- BootStrap Script Files -->
+    <%- include('../partials/bootstrapScripts') %>
+
+    <!-- Header Section -->
+    <header><%- include('../partials/nav') %></header>
+
+    <!-- Login Form -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-6 mx-auto my-4">
+                <!-- Title -->
+                <h1>Login</h1>
+                <!-- Form -->
+                <form action="/auth/login" method="POST">
+                    <input type="email" name="email" placeholder="Email" required />
+                    <input type="password" name="password" placeholder="password" required />
+                    <input type="submit" value="Login" />
+                </form>
+            </div>
+        </div>
+
+        <!-- Image -->
+        <div class="row">
+            <div class="col-sm-6 mx-auto my-4">
+                <img src="https://4.bp.blogspot.com/-jRy0aTA_hwI/WjYytguX0aI/AAAAAAAPfho/bcsbmCnwdcQJvjH1N-4N6l4px6AAVfwtQCLcBGAs/s1600/AW684758_20.gif?time=Mon%20Jun%2008%202020%2004:03:21%20GMT-0700%20(Pacific%20Daylight%20Time)"
+                    alt="">
+
+                <!-- <img src="/images/login-dumpling.gif" alt=""> -->
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

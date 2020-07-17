@@ -23,7 +23,7 @@ mongoose.connection.on('disconnected', function () {
 
 //export modules
 module.exports = {
-    Account: require('./Account'),
+    User: require('./User'),
     GroupForm: require('./GroupForm'),
     Role: require('./Role'),
 }
