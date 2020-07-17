@@ -20,7 +20,9 @@ I also used Albion Online's game API to query information needed.
 4.open put the application on your browser. http://localhost:4000/
 
 ## User Stories
-![Image of house](https://ao2d.fra1.digitaloceanspaces.com/images/T8_PLAYERHOUSE_LEGENDARY_FOUNDER.png)
+![Image of house](https://git.generalassemb.ly/ishepard/Albion-Online-Hub/blob/master/userstory_title.png)
+![Image of userstory1](https://git.generalassemb.ly/ishepard/Albion-Online-Hub/blob/master/userstory1.png)
+![Image of userstory2](https://git.generalassemb.ly/ishepard/Albion-Online-Hub/blob/master/userstory2.png)
 
 
 Link to your wireframes – sketches of major views / interfaces in your application.
