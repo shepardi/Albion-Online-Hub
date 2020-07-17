@@ -7,12 +7,17 @@ const router = express.Router();
 //index
 router.get('/', (req, res) => {
     db.GroupForm.find({}, (err, foundGroupForms) => {
-        const context = {
-            groupForms: foundGroupForms,
-            user: req.session.currentUser
+        if (err) {
+            console.log(err);
+        } else {
+            const context = {
+                groupForms: foundGroupForms,
+                user: req.session.currentUser
+            }
+            res.render('groupCreate/index', context);
         }
-        res.render('groupCreate/index', context);
     });
+
 });
 
 //new - just a form to make groups

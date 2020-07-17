@@ -13,6 +13,7 @@ router.get('/register', function (req, res) {
     };
     res.render('auth/register', context);
 });
+
 // Register Post
 router.post('/register', async function (req, res) {
     try {
