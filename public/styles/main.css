@@ -5,6 +5,10 @@
     --aoBackgroundLight: rgb(245,244,239);
     --aoBrownDark: rgb(194,179,162);
 }
+body{
+    background: var(--aoBackgroundLight);
+    cursor: url(/images/t8_sword.png), default;
+}
 
 /* ----- Navbar ----- */
 .navbar{
@@ -31,9 +35,7 @@
     background:var(--aoBrownDark); 
   }
 /* ----- Landing Page ----- */
-body{
-    background: var(--aoBackgroundLight);
-}
+
 
 
 .icon-big{

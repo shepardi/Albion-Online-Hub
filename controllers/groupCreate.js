@@ -37,8 +37,8 @@ router.post('/', (req, res) => {
 //show - brings us to a new page and shows the details
 router.get('/:id', (req, res) => {
     db.GroupForm.findById(req.params.id, (err, foundGroupForm) => {
-        if (error) {
-            console.log(error);
+        if (err) {
+            console.log(err);
         } else {
             let context = {
                 groupForm: foundGroupForm,
@@ -55,8 +55,8 @@ router.get('/:id', (req, res) => {
 //delete - deletes the object in out database @ id
 router.delete('/:id', (req, res) => {
     db.GroupForm.findByIdAndRemove(req.params.id, () => {
-        if (error) {
-            console.log(error);
+        if (err) {
+            console.log(err);
         } else {
             let context = {
                 groupForm: foundGroupForm,
@@ -70,8 +70,8 @@ router.delete('/:id', (req, res) => {
 // Edit
 router.get('/:id/edit', (req, res) => {
     db.GroupForm.findById(req.params.id, (err, foundGroupForm) => {
-        if (error) {
-            console.log(error);
+        if (err) {
+            console.log(err);
         } else {
             let context = {
                 groupForm: foundGroupForm,
@@ -85,8 +85,8 @@ router.get('/:id/edit', (req, res) => {
 // Update
 router.put('/:id', (req, res) => {
     db.GroupForm.findByIdAndUpdate(req.params.id, req.body, () => {
-        if (error) {
-            console.log(error);
+        if (err) {
+            console.log(err);
         } else {
             res.redirect('/groupCreate');
         }

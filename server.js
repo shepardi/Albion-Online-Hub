@@ -51,9 +51,7 @@ app.use('/auth', controllers.auth);
 
 app.use('/groupCreate', controllers.groupCreate);
 
-// auth routes
-
-// admin routes
+app.use('/account', controllers.account);
 
 // ..... routes
 
