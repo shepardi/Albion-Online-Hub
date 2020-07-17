@@ -9,6 +9,7 @@ router.get('/', (req, res) => {
     db.GroupForm.find({}, (err, foundGroupForms) => {
         const context = {
             groupForms: foundGroupForms,
+            user: req.session.currentUser
         }
         res.render('groupCreate/index', context);
     });
@@ -16,23 +17,36 @@ router.get('/', (req, res) => {
 
 //new - just a form to make groups
 router.get('/new', (req, res) => {
-    res.render('groupCreate/new')
+    const context = {
+        user: req.session.currentUser
+    }
+    res.render('groupCreate/new', context)
 });
 
 //create - takes information from the form and puts it into our database
 router.post('/', (req, res) => {
     db.GroupForm.create(req.body, (err, createdGroupForm) => {
-        res.redirect('/groupCreate');
+        if (err) {
+            console.log(error);
+        } else {
+            res.redirect('/groupCreate');
+        }
     })
 });
 
 //show - brings us to a new page and shows the details
 router.get('/:id', (req, res) => {
     db.GroupForm.findById(req.params.id, (err, foundGroupForm) => {
-        let context = {
-            groupForm: foundGroupForm,
+        if (error) {
+            console.log(error);
+        } else {
+            let context = {
+                groupForm: foundGroupForm,
+                user: req.session.currentUser
+            }
+            res.render('groupCreate/show', context);
         }
-        res.render('groupCreate/show', context);
+
 
     })
 })
@@ -41,21 +55,41 @@ router.get('/:id', (req, res) => {
 //delete - deletes the object in out database @ id
 router.delete('/:id', (req, res) => {
     db.GroupForm.findByIdAndRemove(req.params.id, () => {
-        res.redirect('/groupCreate');
+        if (error) {
+            console.log(error);
+        } else {
+            let context = {
+                groupForm: foundGroupForm,
+                user: req.session.currentUser
+            }
+            res.redirect('/groupCreate');
+        }
     });
 });
 
 // Edit
 router.get('/:id/edit', (req, res) => {
     db.GroupForm.findById(req.params.id, (err, foundGroupForm) => {
-        res.render('groupCreate/edit', { groupForm: foundGroupForm })
+        if (error) {
+            console.log(error);
+        } else {
+            let context = {
+                groupForm: foundGroupForm,
+                user: req.session.currentUser
+            }
+            res.render('groupCreate/edit', context);
+        }
     })
 })
 
 // Update
 router.put('/:id', (req, res) => {
     db.GroupForm.findByIdAndUpdate(req.params.id, req.body, () => {
-        res.redirect('/groupCreate');
+        if (error) {
+            console.log(error);
+        } else {
+            res.redirect('/groupCreate');
+        }
     });
 });
 

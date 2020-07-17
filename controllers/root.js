@@ -8,6 +8,9 @@ const router = express.Router();
 //routes
 //Root Route
 router.get('/', function (req, res) {
-    res.render('index');
+    context = {
+        user: req.session.currentUser
+    }
+    res.render('index', context);
 })
 module.exports = router;
