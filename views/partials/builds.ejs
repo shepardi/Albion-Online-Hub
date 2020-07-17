@@ -2,15 +2,30 @@
 
 <!-- In Container Class -->
 
+<!-- Script that handles fetching items from the game api -->
+<script defer>
+    function searchItem(gear, t, lvl, type) {
+        let item = gear
+        let tier = t
+        let enchant = lvl
+
+        let searchString = `T${tier}_${item}@${enchant}`;
+        console.log(searchString);
+
+        document.getElementById(`${type}`).src = `https://gameinfo.albiononline.com/api/gameinfo/items/${searchString}/`
+
+    }
+</script>
 <!-- ROW 1 -->
-<div class="row d-flex justify-content-around">
+<div class="row d-flex mx-2 ">
     <!-- Bag-->
     <div class="dropdown head">
 
         <div class="d-flex border border-dark float-right">
 
             <!-- Item Icon -->
-            <img src="https://gameinfo.albiononline.com/api/gameinfo/items/T7_BAG/" alt="item" class="img-fluid item">
+            <img src="https://gameinfo.albiononline.com/api/gameinfo/items/T7_BAG/" alt="item" class="img-fluid item"
+                id="bag">
 
             <!-- Drop Down Button -->
             <button class="btn btn-secondary dropdown-toggle" type="button" id="head_dropdown" data-toggle="dropdown"
@@ -21,13 +36,22 @@
             <div class=" dropdown-menu" aria-labelledby="dropdownMenuButton">
 
                 <!-- Item Name -->
-                <input type="text" name="" id='' placeholder="Search Item">
+                <select name="item" id="bag-item">
+                    <option value="BAG">Bag</option>
+                </select>
                 <!-- Item Tier -->
                 <label for="tier">Tier:</label>
-                <input type="number" min="1" max="8" id="tier" placeholder="4" 0>
-                <label for="enchant">Enchantment:</label>
+                <input type="number" min="2" max="8" id="bag-tier" placeholder="4" onclick="searchItem( 
+                        document.getElementById('bag-item').value, 
+                        document.getElementById('bag-tier').value,
+                        document.getElementById('bag-enchant').value,
+                        'bag'
+                        )">
+                <label for=" enchant">Enchantment:</label>
                 <!-- Item Enchanment Lvl -->
-                <input type="number" min='1' max='3' id="enchant" placeholder="1">
+                <input type="number" min='0' max='3' id="bag-enchant" placeholder="0"
+                    onclick="searchItem( document.getElementById('bag-item').value, document.getElementById('bag-tier').value,document.getElementById('bag-enchant').value)">
+                <!-- Submit Button -->
 
             </div>
         </div>
@@ -35,7 +59,7 @@
     </div>
 
     <!-- Head -->
-    <div class="dropdown head">
+    <div class=" dropdown head">
 
         <div class="d-flex border border-dark float-right">
 
@@ -52,20 +76,32 @@
             <div class=" dropdown-menu" aria-labelledby="dropdownMenuButton">
 
                 <!-- Item Name -->
-                <input type="text" name="" id='' placeholder="Search Item">
+                <select name="HEAD_PLATE_SET" id="head-item">
+                    <option value="HEAD_PLATE_SET">Plate</option>
+                    <option value="HEAD_LEATHER_SET">Leather</option>
+                    <option value="HEAD_CLOTH_SET">Cloth</option>
+                </select>
+
                 <!-- Item Tier -->
                 <label for="tier">Tier:</label>
-                <input type="number" min="1" max="8" id="tier" placeholder="4" 0>
-                <label for="enchant">Enchantment:</label>
+                <input type="number" min="1" max="8" id="head-tier" placeholder="4" onclick="searchItem( 
+                        document.getElementById('head-item').value, 
+                        document.getElementById('head-tier').value,
+                        document.getElementById('head-enchant').value,
+                        'head'
+                        )">
+                <label for=" enchant">Enchantment:</label>
                 <!-- Item Enchanment Lvl -->
-                <input type="number" min='1' max='3' id="enchant" placeholder="1">
+                <input type="number" min='1' max='3' id="head-enchant" placeholder="0"
+                    onclick="searchItem( document.getElementById('head-item').value, document.getElementById('head-tier').value,document.getElementById('head-enchant').value)">
+
             </div>
         </div>
 
     </div>
 
     <!-- Cape -->
-    <div class="dropdown head">
+    <div class=" dropdown head">
 
         <div class="d-flex border border-dark float-right">
 
@@ -79,15 +115,20 @@
 
             <!-- Gear Option List -->
             <div class=" dropdown-menu" aria-labelledby="dropdownMenuButton">
-
+                <form onsubmit="searchItem()"></form>
                 <!-- Item Name -->
-                <input type="text" name="" id='' placeholder="Search Item">
+                <select name="item" id="item">
+                    <option value="ITEM"></option>
+                </select>
                 <!-- Item Tier -->
                 <label for="tier">Tier:</label>
-                <input type="number" min="1" max="8" id="tier" placeholder="4" 0>
+                <input type="number" min="1" max="8" id="tier" placeholder="4" onclick='searchItem()'>
                 <label for="enchant">Enchantment:</label>
                 <!-- Item Enchanment Lvl -->
-                <input type="number" min='1' max='3' id="enchant" placeholder="1">
+                <input type="number" min='1' max='3' id="enchant" placeholder="0" onlick='searchItem()'>
+                <!-- Submit Button -->
+                <button type="submit">Enter</button>
+                </form>
 
             </div>
         </div>
@@ -95,7 +136,7 @@
 </div>
 
 <!-- ROW 2 -->
-<div class="row d-flex justify-content-around">
+<div class="row d-flex mx-2 ">
     <!-- Main Hand-->
     <div class="dropdown head">
 
@@ -112,15 +153,20 @@
 
             <!-- Gear Option List -->
             <div class=" dropdown-menu" aria-labelledby="dropdownMenuButton">
-
+                <form onsubmit="searchItem()"></form>
                 <!-- Item Name -->
-                <input type="text" name="" id='' placeholder="Search Item">
+                <select name="item" id="item">
+                    <option value="ITEM"></option>
+                </select>
                 <!-- Item Tier -->
                 <label for="tier">Tier:</label>
-                <input type="number" min="1" max="8" id="tier" placeholder="4" 0>
+                <input type="number" min="1" max="8" id="tier" placeholder="4" onclick='searchItem()'>
                 <label for="enchant">Enchantment:</label>
                 <!-- Item Enchanment Lvl -->
-                <input type="number" min='1' max='3' id="enchant" placeholder="1">
+                <input type="number" min='1' max='3' id="enchant" placeholder="0" onlick='searchItem()'>
+                <!-- Submit Button -->
+                <button type="submit">Enter</button>
+                </form>
 
             </div>
         </div>
@@ -143,15 +189,20 @@
 
             <!-- Gear Option List -->
             <div class=" dropdown-menu" aria-labelledby="dropdownMenuButton">
-
+                <form onsubmit="searchItem()"></form>
                 <!-- Item Name -->
-                <input type="text" name="" id='' placeholder="Search Item">
+                <select name="item" id="item">
+                    <option value="ITEM"></option>
+                </select>
                 <!-- Item Tier -->
                 <label for="tier">Tier:</label>
-                <input type="number" min="1" max="8" id="tier" placeholder="4" 0>
+                <input type="number" min="1" max="8" id="tier" placeholder="4" onclick='searchItem()'>
                 <label for="enchant">Enchantment:</label>
                 <!-- Item Enchanment Lvl -->
-                <input type="number" min='1' max='3' id="enchant" placeholder="1">
+                <input type="number" min='1' max='3' id="enchant" placeholder="0" onclick='searchItem()'>
+                <!-- Submit Button -->
+                <button type="submit">Enter</button>
+                </form>
             </div>
         </div>
 
@@ -173,15 +224,20 @@
 
             <!-- Gear Option List -->
             <div class=" dropdown-menu" aria-labelledby="dropdownMenuButton">
-
+                <form onsubmit="searchItem()"></form>
                 <!-- Item Name -->
-                <input type="text" name="" id='' placeholder="Search Item">
+                <select name="item" id="item">
+                    <option value="ITEM"></option>
+                </select>
                 <!-- Item Tier -->
                 <label for="tier">Tier:</label>
-                <input type="number" min="1" max="8" id="tier" placeholder="4" 0>
+                <input type="number" min="1" max="8" id="tier" placeholder="4" onclick='searchItem()'>
                 <label for="enchant">Enchantment:</label>
                 <!-- Item Enchanment Lvl -->
-                <input type="number" min='1' max='3' id="enchant" placeholder="1">
+                <input type="number" min='1' max='3' id="enchant" placeholder="0" onclick='searchItem()'>
+                <!-- Submit Button -->
+                <button type="submit">Enter</button>
+                </form>
 
             </div>
         </div>
@@ -189,7 +245,7 @@
 </div>
 
 <!-- ROW 3 -->
-<div class="row d-flex justify-content-around">
+<div class="row d-flex mx-2 ">
     <!-- Food -->
     <div class="dropdown head">
 
@@ -206,15 +262,20 @@
 
             <!-- Gear Option List -->
             <div class=" dropdown-menu" aria-labelledby="dropdownMenuButton">
-
+                <form onsubmit="searchItem()"></form>
                 <!-- Item Name -->
-                <input type="text" name="" id='' placeholder="Search Item">
+                <select name="item" id="item">
+                    <option value="ITEM"></option>
+                </select>
                 <!-- Item Tier -->
                 <label for="tier">Tier:</label>
-                <input type="number" min="1" max="8" id="tier" placeholder="4" 0>
+                <input type="number" min="1" max="8" id="tier" placeholder="4" onclick='searchItem()'>
                 <label for="enchant">Enchantment:</label>
                 <!-- Item Enchanment Lvl -->
-                <input type="number" min='1' max='3' id="enchant" placeholder="1">
+                <input type="number" min='1' max='3' id="enchant" placeholder="0" onclick='searchItem()'>
+                <!-- Submit Button -->
+                <button type="submit">Enter</button>
+                </form>
 
             </div>
         </div>
@@ -237,15 +298,20 @@
 
             <!-- Gear Option List -->
             <div class=" dropdown-menu" aria-labelledby="dropdownMenuButton">
-
+                <form onsubmit="searchItem()"></form>
                 <!-- Item Name -->
-                <input type="text" name="" id='' placeholder="Search Item">
+                <select name="item" id="item">
+                    <option value="ITEM"></option>
+                </select>
                 <!-- Item Tier -->
                 <label for="tier">Tier:</label>
-                <input type="number" min="1" max="8" id="tier" placeholder="4" 0>
+                <input type="number" min="1" max="8" id="tier" placeholder="4" onclick='searchItem()'>
                 <label for="enchant">Enchantment:</label>
                 <!-- Item Enchanment Lvl -->
-                <input type="number" min='1' max='3' id="enchant" placeholder="1">
+                <input type="number" min='1' max='3' id="enchant" placeholder="0" onclick='searchItem()'>
+                <!-- Submit Button -->
+                <button type="submit">Enter</button>
+                </form>
             </div>
         </div>
 
@@ -267,15 +333,20 @@
 
             <!-- Gear Option List -->
             <div class=" dropdown-menu" aria-labelledby="dropdownMenuButton">
-
+                <form onsubmit="searchItem()"></form>
                 <!-- Item Name -->
-                <input type="text" name="" id='' placeholder="Search Item">
+                <select name="item" id="item">
+                    <option value="ITEM"></option>
+                </select>
                 <!-- Item Tier -->
                 <label for="tier">Tier:</label>
-                <input type="number" min="1" max="8" id="tier" placeholder="4" 0>
+                <input type="number" min="1" max="8" id="tier" placeholder="4" onclick='searchItem()'>
                 <label for="enchant">Enchantment:</label>
                 <!-- Item Enchanment Lvl -->
-                <input type="number" min='1' max='3' id="enchant" placeholder="1">
+                <input type="number" min='1' max='3' id="enchant" placeholder="0" onclick='searchItem()'>
+                <!-- Submit Button -->
+                <button type="submit">Enter</button>
+                </form>
 
             </div>
         </div>

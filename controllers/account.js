@@ -5,7 +5,10 @@ const router = express.Router();
 
 // Routes
 router.get('/', (req, res) => {
-    res.render('account');
+    const context = {
+        user: req.session.currentUser,
+    };
+    res.render('account', context);
 });
 
 

@@ -12,6 +12,10 @@
 
 .dropdown-toggle{
     margin-left:-14%;
-    opacity:.9;
+    opacity:.5;
     padding:0;
+}
+
+.dropdown-toggle:hover{
+    opacity:1;
 }
