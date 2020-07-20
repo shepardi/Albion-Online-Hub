@@ -26,7 +26,7 @@ I also used Albion Online's game API to query information needed.
 
 ## WireFram
 https://www.figma.com/file/evgFfrjFncdePhUPPmdkDr/Albion-Online-Tool.
-![WireFrame]
+![WireFrame](https://git.generalassemb.ly/ishepard/Albion-Online-Hub/blob/master/userstory2.png)
 
 ## ERD
 ![Image of userstory2](https://git.generalassemb.ly/ishepard/Albion-Online-Hub/blob/master/ERD.png)
