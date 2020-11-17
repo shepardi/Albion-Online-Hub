@@ -21,16 +21,17 @@ I also used Albion Online's game API to query information needed.
 4.open put the application on your browser. http://localhost:4000/
 
 ## User Stories
-![Image of house](https://git.generalassemb.ly/ishepard/Albion-Online-Hub/blob/master/userstory_title.png)
-![Image of userstory1](https://git.generalassemb.ly/ishepard/Albion-Online-Hub/blob/master/userstory1.png)
-![Image of userstory2](https://git.generalassemb.ly/ishepard/Albion-Online-Hub/blob/master/userstory2.png)
+![Image of house](https://raw.githubusercontent.com/shepardi/Albion-Online-Hub/master/userstory_title.png)
+![Image of userstory1](https://raw.githubusercontent.com/shepardi/Albion-Online-Hub/master/userstory1.png)
+![Image of userstory2](https://raw.githubusercontent.com/shepardi/Albion-Online-Hub/master/userstory1.png)
 
-## WireFram
+## WireFrame
 https://www.figma.com/file/evgFfrjFncdePhUPPmdkDr/Albion-Online-Tool.
-![WireFrame](https://git.generalassemb.ly/ishepard/Albion-Online-Hub/blob/master/AO%20WireFrame.png)
+![WireFrame](https://raw.githubusercontent.com/shepardi/Albion-Online-Hub/master/AO%20WireFrame.png)
+
 
 ## ERD
-![Image of userstory2](https://git.generalassemb.ly/ishepard/Albion-Online-Hub/blob/master/ERD.png)
+![Image of userstory2](https://raw.githubusercontent.com/shepardi/Albion-Online-Hub/master/ERD.png)
 
 ## Bugs/ and things to Work on.
 Still need to pull in user guild information.
